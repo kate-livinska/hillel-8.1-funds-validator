@@ -1,5 +1,6 @@
 package app;
 
+import java.util.InputMismatchException;
 import java.util.Scanner;
 
 public class Main {
@@ -20,6 +21,9 @@ public class Main {
             System.out.printf("Balance is USD %.2f.%n" +
                     "Enter purchase amount, USD: ", balance);
             return scanner.nextDouble();
+        } catch (InputMismatchException e) {
+            System.out.println("Invalid input.");
+            return 0;
         }
     }
 
