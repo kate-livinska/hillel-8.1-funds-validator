@@ -16,10 +16,11 @@ public class Main {
     }
 
     private static double getAmount() {
-        System.out.printf("Balance is USD %.2f.%n" +
-                "Enter purchase amount, USD: ", balance);
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextDouble();
+        try (Scanner scanner = new Scanner(System.in)) {
+            System.out.printf("Balance is USD %.2f.%n" +
+                    "Enter purchase amount, USD: ", balance);
+            return scanner.nextDouble();
+        }
     }
 
     // Метод валідації наявних коштів
